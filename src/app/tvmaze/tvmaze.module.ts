@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search/search.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { PosterComponent } from './poster/poster.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,6 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [SearchComponent]
+  declarations: [SearchComponent, PosterComponent]
 })
 export class TvmazeModule { }
