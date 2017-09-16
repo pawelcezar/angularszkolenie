@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Show, ShowsResponse} from '../tvmaze.models';
 
 @Component({
   selector: 'si-search',
@@ -7,11 +8,15 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  shows: Show[];
 
   constructor(http: HttpClient) {
     const apiUrl = 'http://api.tvmaze.com/search/shows?q=flash';
 
-    http.get(apiUrl);
+    http.get<ShowsResponse[]>(apiUrl)
+      .subscribe(showsResponse => {
+        this.shows = showsResponse.map(({show}) => show); // object destructuring
+      });
   }
 
   ngOnInit() {
