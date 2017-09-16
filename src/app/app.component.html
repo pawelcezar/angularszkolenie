@@ -1,9 +1,13 @@
-<h1 (click)="handleClick($event)">Click here</h1>
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" class="nav-item is-tab">Home</a>
+      <a routerLink="/search" routerLinkActive="is-active" class="nav-item is-tab">TV Shows</a>
+      <a href="#" class="nav-item">Contact</a>
+    </div>
+  </div>
+</nav>
 
-<si-home></si-home>
-<si-home [owner]="title" (timePassed)="title = title + $event"></si-home>
-<si-home owner="title"></si-home>
-<si-home [owner]="'title'"></si-home>
-<si-home owner="{{title}}"></si-home>
-
-<router-outlet></router-outlet><!---->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
