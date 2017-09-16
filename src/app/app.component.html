@@ -1,0 +1,9 @@
+<h1 (click)="handleClick($event)">Click here</h1>
+
+<si-home></si-home>
+<si-home [owner]="title" (timePassed)="title = title + $event"></si-home>
+<si-home owner="title"></si-home>
+<si-home [owner]="'title'"></si-home>
+<si-home owner="{{title}}"></si-home>
+
+<router-outlet></router-outlet><!---->
