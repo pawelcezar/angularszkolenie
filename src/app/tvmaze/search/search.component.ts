@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'si-search',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(http: HttpClient) {
+    const apiUrl = 'http://api.tvmaze.com/search/shows?q=flash';
+
+    http.get(apiUrl);
+  }
 
   ngOnInit() {
   }
